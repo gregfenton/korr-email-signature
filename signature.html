@@ -1,0 +1,252 @@
+<html>
+  <head>
+    <style>
+      .button-73 {
+        appearance: none;
+        background-color: #ffffff;
+        border-radius: 40em;
+        border-style: none;
+        box-shadow: #30d001 0 -12px 6px inset;
+        box-sizing: border-box;
+        color: #000000;
+        cursor: pointer;
+        display: inline-block;
+        font-family: -apple-system, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: -0.24px;
+        margin: 0;
+        outline: none;
+        padding: 1rem 1.3rem;
+        quotes: auto;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      .button-73:hover {
+        background-color: #36f401;
+        box-shadow: #20b001 0 -6px 8px inset;
+        transform: scale(1.125);
+      }
+
+      .button-73:active {
+        transform: scale(1.025);
+      }
+
+      @media (min-width: 768px) {
+        .button-73 {
+          font-size: 1.5rem;
+          padding: 0.75rem 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body onload="loadForm()" style="font-family: Arial !important">
+    <table style="border: 1px solid black; border-collapse: collapse">
+      <tbody>
+        <tr style="border: 1px solid black">
+          <td style="max-width: 20rem; vertical-align: top; padding: 10px 30px 0px 10px">
+            1. Fill in your personal details:
+          </td>
+          <td style="padding-top: 10px">
+            <table style="width: 100%">
+              <tbody>
+                <tr>
+                  <td>
+                    <label>Name</label>
+                  </td>
+                  <td>
+                    <input type="text" id="inputName" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Job Title</label>
+                  </td>
+                  <td>
+                    <input type="text" id="inputJobTitle" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Phone</label>
+                  </td>
+                  <td>
+                    <input type="text" id="inputPhone" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Email</label>
+                  </td>
+                  <td>
+                    <input type="text" id="inputEmail" />
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" style="padding: 10px 0px 10px 0px">
+                    <button class="button-73" role="button" style="width: 100%" onclick="updateSignature()">
+                      Update Signature
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr style="border: 1px solid black">
+          <td style="max-width: 20rem; vertical-align: top; padding: 20px 30px 0px 10px">
+            2. Review the results:
+          </td>
+          <td style="border: 1px solid black; padding: 20px 20px 20px 20px">
+            <table style="border-top: solid #34d601 1px" id="signatureTable">
+              <tbody>
+                <tr>
+                  <td style="vertical-align: top; padding-top: 10px; padding-right: 10px">
+                    <img
+                      src="data:image/png;base64,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"
+                    />
+                  </td>
+                  <td style="padding-top: 20px">
+                    <div
+                      style="font-family: Arial, Helvetica, sans-serif; font-size: x-large"
+                      id="theName"
+                    >
+                      Greg Fenton
+                    </div>
+                    <div style="font-family: Arial, Helvetica, sans-serif; font-size: large">
+                      <span id="theJobTitle">CTO</span> | Korr
+                    </div>
+                    <div style="height: 8px"></div>
+                    <div style="font-family: Arial, Helvetica, sans-serif">
+                      <a
+                        style="
+                          color: black;
+                          font-weight: normal;
+                          font-size: smaller;
+                          text-decoration: none;
+                        "
+                        href="tel:+1-416-315-4568"
+                        id="thePhone"
+                        >+1-416-315-4568</a
+                      >
+                    </div>
+                    <div style="font-family: Arial, Helvetica, sans-serif">
+                      <a
+                        style="
+                          color: black;
+                          font-weight: normal;
+                          font-size: smaller;
+                          text-decoration: none;
+                        "
+                        href="mailto:gf@korr.co"
+                        ><span id="theEmail">gf</span>@korr.co</a
+                      >
+                    </div>
+                    <div style="font-family: Arial, Helvetica, sans-serif">
+                      <a
+                        style="
+                          color: black;
+                          font-weight: normal;
+                          font-size: smaller;
+                          text-decoration: none;
+                        "
+                        href="https://gokorr.com/"
+                        >gokorr.com</a
+                      >
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr style="border: 1px solid black">
+          <td style="max-width: 20rem; padding: 10px 30px 10px 10px">
+            3. Copy the signature to your clipboard:
+          </td>
+          <td>
+            <table style="width: 100%">
+              <tbody>
+                <tr>
+                  <td>
+                    <button class="button-73" role="button" id="copyToClipboardButton" style="width: 100%">
+                      Copy to Clipboard
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr style="border: 1px solid black">
+          <td style="max-width: 20rem; padding: 10px 30px 10px 10px">
+            4. Go to Outlook >> Settings >> "email signature" >> paste your clipboard value into a
+            new or existing signature
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      let updateSignature = () => {
+        let x = document.getElementById('inputName');
+        console.log(`x is`, x);
+        let valName = document.getElementById('inputName').value;
+        let valJobTitle = document.getElementById('inputJobTitle').value;
+        let valPhone = document.getElementById('inputPhone').value;
+        let valEmail = document.getElementById('inputEmail').value;
+
+        console.log(`valName`, valName);
+        console.log(`valJobTitle`, valJobTitle);
+        console.log(`valPhone`, valPhone);
+        console.log(`valEmail`, valEmail);
+
+        document.getElementById('theName').innerText = valName;
+        document.getElementById('theJobTitle').innerText = valJobTitle;
+        document.getElementById('thePhone').innerText = valPhone;
+        document.getElementById('theEmail').innerText = valEmail;
+      };
+
+      let loadForm = () => {
+        let valName = document.getElementById('theName').innerText;
+        let valJobTitle = document.getElementById('theJobTitle').innerText;
+        let valPhone = document.getElementById('thePhone').innerText;
+        let valEmail = document.getElementById('theEmail').innerText;
+
+        console.log(`valName`, valName);
+        console.log(`valJobTitle`, valJobTitle);
+        console.log(`valPhone`, valPhone);
+        console.log(`valEmail`, valEmail);
+
+        document.getElementById('inputName').value = valName;
+        document.getElementById('inputJobTitle').value = valJobTitle;
+        document.getElementById('inputPhone').value = valPhone;
+        document.getElementById('inputEmail').value = valEmail;
+      };
+
+      let table = document.querySelector('#signatureTable');
+      let button = document.querySelector('#copyToClipboardButton');
+
+      function selectNode(node) {
+        let range = document.createRange();
+        range.selectNodeContents(node);
+        let select = window.getSelection();
+        select.removeAllRanges();
+        select.addRange(range);
+      }
+
+      button.addEventListener('click', function () {
+        selectNode(table);
+        document.execCommand('copy');
+        alert(
+          "Copied to clipboard. Now paste it to an Email Signature in Outlook's settings.\n\nGo Korr!"
+        );
+      });
+    </script>
+  </body>
+</html>
