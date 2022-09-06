@@ -1,46 +1,51 @@
 <html>
   <head>
     <style>
-      .button-73 {
-        appearance: none;
-        background-color: #ffffff;
-        border-radius: 40em;
-        border-style: none;
-        box-shadow: #30d001 0 -12px 6px inset;
-        box-sizing: border-box;
-        color: #000000;
+      .button-71 {
+        background-color: #34d601;
+        border: 0;
+        border-radius: 56px;
+        color: #fff;
         cursor: pointer;
         display: inline-block;
-        font-family: -apple-system, sans-serif;
-        font-size: 1.2rem;
-        font-weight: 700;
-        letter-spacing: -0.24px;
-        margin: 0;
-        outline: none;
-        padding: 1rem 1.3rem;
-        quotes: auto;
+        font-family: system-ui, -apple-system, system-ui, 'Segoe UI', Roboto, Ubuntu,
+          'Helvetica Neue', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        outline: 0;
+        padding: 16px 21px;
+        position: relative;
         text-align: center;
         text-decoration: none;
-        transition: all 0.15s;
+        transition: all 0.3s;
         user-select: none;
         -webkit-user-select: none;
         touch-action: manipulation;
       }
 
-      .button-73:hover {
-        background-color: #36f401;
-        box-shadow: #20b001 0 -6px 8px inset;
-        transform: scale(1.125);
+      .button-71:before {
+        background-color: initial;
+        background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+        border-radius: 125px;
+        content: '';
+        height: 50%;
+        left: 4%;
+        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        transition: all 0.3s;
+        width: 92%;
       }
 
-      .button-73:active {
-        transform: scale(1.025);
+      .button-71:hover {
+        box-shadow: rgba(255, 255, 255, 0.2) 0 3px 15px inset, rgba(0, 0, 0, 0.1) 0 3px 5px,
+          rgba(0, 0, 0, 0.1) 0 10px 13px;
+        transform: scale(1.05);
       }
 
       @media (min-width: 768px) {
-        .button-73 {
-          font-size: 1.5rem;
-          padding: 0.75rem 2rem;
+        .button-71 {
+          padding: 16px 48px;
         }
       }
     </style>
@@ -97,25 +102,21 @@
                     >
                   </td>
                 </tr>
-                <tr>
-                  <td colspan="2" style="padding: 10px 0px 10px 0px">
-                    <button
-                      class="button-73"
-                      role="button"
-                      style="width: 100%"
-                      onclick="updateSignature()"
-                    >
-                      Update Signature
-                    </button>
-                  </td>
-                </tr>
               </tbody>
             </table>
+            <tr>
+              <td style="padding: 10px 0px 10px 0px">2. Update the signature:</td>
+              <td style="padding: 10px 0px 10px 0px">
+                <button class="button-71" role="button" onclick="updateSignature()">
+                  Update Signature ⇩
+                </button>
+              </td>
+            </tr>
           </td>
         </tr>
         <tr style="border: 1px solid black">
           <td style="max-width: 20rem; vertical-align: top; padding: 20px 30px 0px 10px">
-            2. Review the results:
+            3. Review the results:
           </td>
           <td style="border: 1px solid black; padding: 20px 20px 20px 20px">
             <table style="border-top: solid #34d601 1px" id="signatureTable">
@@ -143,7 +144,7 @@
                           color: black;
                           font-weight: normal;
                           font-size: smaller;
-                          text-decoration: none;
+                          /* text-decoration: none; */
                         "
                         href="tel:+1-416-315-4568"
                         id="thePhone"
@@ -156,10 +157,11 @@
                           color: black;
                           font-weight: normal;
                           font-size: smaller;
-                          text-decoration: none;
+                          /* text-decoration: none; */
                         "
                         href="mailto:gf@korr.co"
-                        ><span id="theEmail">gf</span>@korr.co</a
+                        id="theEmailHref"
+                        >gf@korr.co</a
                       >
                     </div>
                     <div style="font-family: Arial, Helvetica, sans-serif">
@@ -168,7 +170,7 @@
                           color: black;
                           font-weight: normal;
                           font-size: smaller;
-                          text-decoration: none;
+                          /* text-decoration: none; */
                         "
                         href="https://gokorr.com/"
                         >gokorr.com</a
@@ -182,7 +184,7 @@
         </tr>
         <tr style="border: 1px solid black">
           <td style="max-width: 20rem; padding: 10px 30px 10px 10px">
-            3. Copy the signature to your clipboard:
+            4. Copy the signature to your clipboard:
           </td>
           <td>
             <table style="width: 100%">
@@ -190,12 +192,12 @@
                 <tr>
                   <td>
                     <button
-                      class="button-73"
+                      class="button-71"
                       role="button"
                       id="copyToClipboardButton"
                       style="width: 100%"
                     >
-                      Copy to Clipboard
+                      Copy to Clipboard 📋
                     </button>
                   </td>
                 </tr>
@@ -204,9 +206,9 @@
           </td>
         </tr>
         <tr style="border: 1px solid black">
-          <td style="max-width: 20rem; padding: 10px 30px 10px 10px">
-            4. Go to Outlook >> Settings >> "email signature" >> paste your clipboard value into a
-            new or existing signature
+          <td style="max-width: 20rem; padding: 10px 30px 10px 10px" colspan="2">
+            5. Go to Outlook ⇨ Settings ⇨ "email signature" ⇨ paste your clipboard value into a new
+            or existing signature
           </td>
           <td></td>
         </tr>
@@ -229,14 +231,16 @@
         document.getElementById('theName').innerText = valName;
         document.getElementById('theJobTitle').innerText = valJobTitle;
         document.getElementById('thePhone').innerText = valPhone;
-        document.getElementById('theEmail').innerText = valEmail;
+        document.getElementById('theEmailHref').href = `mailto:${valEmail}@korr.co`;
+        document.getElementById('theEmailHref').innerText = `${valEmail}@korr.co`;
       };
 
       let loadForm = () => {
         let valName = document.getElementById('theName').innerText;
         let valJobTitle = document.getElementById('theJobTitle').innerText;
         let valPhone = document.getElementById('thePhone').innerText;
-        let valEmail = document.getElementById('theEmail').innerText;
+        let valEmail = document.getElementById('theEmailHref').innerText;
+        valEmail = valEmail.split('@')[0];
 
         console.log(`valName`, valName);
         console.log(`valJobTitle`, valJobTitle);
